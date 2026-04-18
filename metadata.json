@@ -1,0 +1,6 @@
+{
+  "name": "Remix: Smart English Exam System",
+  "description": "An intelligent web app for 12th-grade students to prepare for the English THPT Exam. Features AI-generated exams, personalized learning paths, and detailed analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

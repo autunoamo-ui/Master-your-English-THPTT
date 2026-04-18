@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+  
+  --color-primary: #4A90E2;
+  --color-accent: #FF9500;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-bg-light: #f8fafc;
+  --color-text-dark: #1e293b;
+  --color-text-muted: #64748b;
+  
+  --shadow-sleek: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.pro-markdown h1 { @apply text-2xl font-extrabold mb-4 mt-6 text-slate-900; }
+.pro-markdown h2 { @apply text-xl font-bold mb-3 mt-5 text-slate-800 border-l-4 border-primary pl-3; }
+.pro-markdown h3 { @apply text-lg font-bold mb-2 mt-4 text-slate-800; }
+.pro-markdown p { @apply mb-4 leading-relaxed; }
+.pro-markdown ul { @apply list-disc pl-6 mb-4 space-y-2; }
+.pro-markdown ol { @apply list-decimal pl-6 mb-4 space-y-2; }
+.pro-markdown li { @apply text-slate-600 font-medium; }
+.pro-markdown strong { @apply font-black text-slate-900; }
+.pro-markdown code { @apply bg-slate-100 px-1.5 py-0.5 rounded text-primary font-mono text-sm; }
+.pro-markdown blockquote { @apply border-l-4 border-slate-200 pl-4 py-1 italic text-slate-500 mb-4 bg-slate-50/50 rounded-r-xl; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #4A90E2 0%, #FF9500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #4A90E2 0%, #FF9500 100%);
+}
+
