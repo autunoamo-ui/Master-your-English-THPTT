@@ -110,9 +110,9 @@ export default function CloneExam({ onStart }: CloneExamProps) {
     if (!generatedQuestions) return;
     let text = "ĐỀ THI TIẾNG ANH\n\n";
     generatedQuestions.forEach((q, i) => {
-      text += \`Câu \${i+1}: \${q.content}\n\`;
+      text += `Câu ${i+1}: ${q.content}\n`;
       q.options.forEach((opt, idx) => {
-        text += \`\${String.fromCharCode(65 + idx)}. \${opt}\n\`;
+        text += `${String.fromCharCode(65 + idx)}. ${opt}\n`;
       });
       text += "\n";
     });
@@ -135,7 +135,7 @@ export default function CloneExam({ onStart }: CloneExamProps) {
                <FileText className="w-5 h-5 text-indigo-500" />
                1. Tải lên Đề Mẫu
             </h3>
-            <div {...getSampleRootProps()} className={\`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-colors \${sampleFile ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200 hover:border-indigo-400'}\`}>
+            <div {...getSampleRootProps()} className={`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-colors ${sampleFile ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200 hover:border-indigo-400'}`}>
               <input {...getSampleInputProps()} />
               {sampleFile ? (
                 <div className="flex flex-col items-center gap-2">
@@ -164,7 +164,7 @@ export default function CloneExam({ onStart }: CloneExamProps) {
                <BrainCircuit className="w-5 h-5 text-emerald-500" />
                2. Tải lên Ngữ Liệu Mới
             </h3>
-            <div {...getTargetRootProps()} className={\`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-colors \${targetFile ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200 hover:border-emerald-400'}\`}>
+            <div {...getTargetRootProps()} className={`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-colors ${targetFile ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200 hover:border-emerald-400'}`}>
               <input {...getTargetInputProps()} />
               {targetFile ? (
                 <div className="flex flex-col items-center gap-2">
@@ -198,11 +198,11 @@ export default function CloneExam({ onStart }: CloneExamProps) {
                  <div 
                    key={opt.id} 
                    onClick={() => setSimilarity(opt.id as any)}
-                   className={\`p-4 rounded-2xl border-2 cursor-pointer transition-all \${similarity === opt.id ? 'border-indigo-500 bg-indigo-50' : 'border-slate-100 hover:border-slate-300'}\`}
+                   className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${similarity === opt.id ? 'border-indigo-500 bg-indigo-50' : 'border-slate-100 hover:border-slate-300'}`}
                  >
                     <div className="flex items-center gap-2 mb-1">
-                      <div className={\`w-4 h-4 rounded-full border-2 \${similarity === opt.id ? 'border-indigo-500 border-4' : 'border-slate-300'}\`} />
-                      <span className={\`font-bold \${similarity === opt.id ? 'text-indigo-700' : 'text-slate-600'}\`}>{opt.label}</span>
+                      <div className={`w-4 h-4 rounded-full border-2 ${similarity === opt.id ? 'border-indigo-500 border-4' : 'border-slate-300'}`} />
+                      <span className={`font-bold ${similarity === opt.id ? 'text-indigo-700' : 'text-slate-600'}`}>{opt.label}</span>
                     </div>
                     <p className="text-xs text-slate-500 pl-6">{opt.desc}</p>
                  </div>
@@ -286,11 +286,11 @@ export default function CloneExam({ onStart }: CloneExamProps) {
                  
                  <div className="pl-11 grid grid-cols-1 md:grid-cols-2 gap-3">
                     {q.options.map((opt, optIdx) => (
-                      <div key={optIdx} className={\`p-3 rounded-xl border-2 \${q.correctAnswer === optIdx ? 'border-emerald-500 bg-emerald-50' : 'border-slate-100 bg-slate-50'}\`}>
-                        <span className={\`font-black mr-2 \${q.correctAnswer === optIdx ? 'text-emerald-600' : 'text-slate-400'}\`}>
+                      <div key={optIdx} className={`p-3 rounded-xl border-2 ${q.correctAnswer === optIdx ? 'border-emerald-500 bg-emerald-50' : 'border-slate-100 bg-slate-50'}`}>
+                        <span className={`font-black mr-2 ${q.correctAnswer === optIdx ? 'text-emerald-600' : 'text-slate-400'}`}>
                           {String.fromCharCode(65 + optIdx)}.
                         </span>
-                        <span className={\`font-medium \${q.correctAnswer === optIdx ? 'text-emerald-800' : 'text-slate-600'}\`}>
+                        <span className={`font-medium ${q.correctAnswer === optIdx ? 'text-emerald-800' : 'text-slate-600'}`}>
                           {opt}
                         </span>
                       </div>
